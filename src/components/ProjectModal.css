@@ -1,0 +1,61 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%; /* 기본 너비를 80%로 설정 */
+    max-height: 80%; /* 기본 최대 높이를 80%로 설정 */
+    overflow-y: auto; /* 내용이 넘칠 경우 세로 스크롤 가능하게 설정 */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.project-details {
+    margin-top: 10px;
+}
+
+.close-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .modal-content {
+        width: 90vw; /* 화면의 90% 너비로 설정 */
+        max-height: 90%; /* 최대 높이를 90%로 설정 */
+    }
+}
